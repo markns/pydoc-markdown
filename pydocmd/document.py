@@ -59,7 +59,7 @@ class Section(object):
         """
 
         print('<h{depth} id="{id}">{title}</h{depth}>\n'
-              .format(depth=self.depth, id=self.identifier, title=self.title),
+              .format(depth=self.depth+1, id=self.identifier, title=self.title),
               file=stream)
         print(self.content, file=stream)
 
