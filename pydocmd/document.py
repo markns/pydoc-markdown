@@ -57,12 +57,10 @@ class Section(object):
         """
         Render the section into *stream*.
         """
-
-        # print('<h{depth} id="{id}">{title}</h{depth}>\n'
-        #       .format(depth=self.depth+1, id=self.identifier, title=self.title),
-        #       file=stream)
         print('#' * self.depth + ' ' + self.title, file=stream)
         print(self.content, file=stream)
+        if self.depth > 1:
+            print("---", file=stream)
 
     @property
     def index(self):

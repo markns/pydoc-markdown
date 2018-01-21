@@ -27,6 +27,7 @@ import signal
 import subprocess
 import sys
 from argparse import ArgumentParser
+from datetime import datetime
 
 import yaml
 
@@ -223,8 +224,20 @@ def main():
         fname = os.path.join(config['gens_dir'], fname)
         makedirs(os.path.dirname(fname))
         with open(fname, 'w') as fp:
+
+            fp.write("""---
+date: {}
+title: Reference
+weight: 41
+---
+""".format(datetime.now().strftime("%Y-%m-%dT%H:%M:%S ")))
+
             for section in doc.sections:
                 section.render(fp)
+
+    if 'output_dir' in config:
+        from distutils.dir_util import copy_tree
+        copy_tree(config['gens_dir'], os.path.expanduser(config['output_dir']))
 
     if args.command == 'generate':
         return 0
