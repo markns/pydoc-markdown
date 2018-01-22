@@ -86,7 +86,7 @@ def dir_object(name):
 
     result = []
     for key, value in getattr(obj, '__dict__', {}).items():
-        if key.startswith('_'): continue
+        if key.startswith('_') and key != "__setitem__": continue
         if not getattr(value, '__doc__'): continue
         if all is not None and key not in all: continue
         if prefix is not None and getattr(value, '__module__', None) != prefix:
