@@ -57,6 +57,9 @@ class Section(object):
         """
         Render the section into *stream*.
         """
+        if self.depth == 1:
+            return
+
         print('#' * self.depth + ' ' + self.title, file=stream)
         print(self.content, file=stream)
         if self.depth > 1:

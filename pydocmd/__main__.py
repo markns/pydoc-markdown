@@ -230,7 +230,7 @@ date: {}
 title: Reference
 weight: 41
 ---
-""".format(datetime.now().strftime("%Y-%m-%dT%H:%M:%S ")))
+""".format(datetime.now().strftime("%Y-%m-%dT%H:%M:%S+01:00")))
 
             for section in doc.sections:
                 section.render(fp)
