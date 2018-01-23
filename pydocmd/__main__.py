@@ -227,7 +227,7 @@ def main():
 
             fp.write("""---
 date: {}
-title: Reference
+title: API Reference
 weight: 41
 ---
 """.format(datetime.now().strftime("%Y-%m-%dT%H:%M:%S+01:00")))
