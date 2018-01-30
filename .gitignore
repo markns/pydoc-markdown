@@ -7,3 +7,5 @@ venv[23]/
 test.md
 dist/
 README.rst
+
+.idea
