@@ -229,6 +229,8 @@ def main():
 date: {}
 title: API Reference
 weight: 41
+aliases:
+  - /docs/api-reference/
 ---
 """.format(datetime.now().strftime("%Y-%m-%dT%H:%M:%S+01:00")))
 
